@@ -1,0 +1,65 @@
+{
+  "name": "serverless-boilerplate",
+  "version": "0.1.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "main": "handler.js",
+  "scripts": {
+    "dev": "serverless offline start --skipCacheInvalidation",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --no-cache",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint:fix": "yarn lint --fix",
+    "prettier": "yarn prettier:check",
+    "prettier:check": "prettier --list-different \"**/*.ts\"",
+    "prettier:write": "prettier --write \"**/*.ts\""
+  },
+  "dependencies": {
+    "aws-lambda": "^1.0.5",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.50",
+    "@types/jest": "^25.2.1",
+    "@types/lodash": "4.14.91",
+    "@types/node": "^11.13.0",
+    "aws-lambda-mock-context": "^3.2.1",
+    "husky": "^4.2.5",
+    "jest": "^25.4.0",
+    "prettier": "^2.0.5",
+    "serverless": "^1.67.3",
+    "serverless-offline": "^6.1.4",
+    "serverless-plugin-typescript": "1.1.7",
+    "ts-jest": "^25.4.0",
+    "tslint": "^6.1.1",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-config-prettier": "^1.18.0"
+  },
+  "engines": {
+    "node": ">=12.16.1",
+    "npm": ">=6.13.4"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "ts-jest"
+    }
+  },
+  "prettier": {
+    "parser": "typescript",
+    "singleQuote": true,
+    "trailingComma": "all",
+    "tabWidth": 2
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && yarn prettier:write"
+    }
+  }
+}

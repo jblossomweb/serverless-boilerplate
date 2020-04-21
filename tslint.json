@@ -1,0 +1,19 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier",
+    "tslint-config-airbnb"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "coverage/**"
+    ]
+  },
+  "jsRules": {},
+  "rules": {
+    "quotemark": [true, "single"],
+    "ter-arrow-parens": false
+  },
+  "rulesDirectory": []
+}
